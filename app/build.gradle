@@ -1,63 +1,63 @@
 plugins {
-    id("com.android.application")
-    id("org.jetbrains.kotlin.android")
-    id("kotlin-kapt")
-    id("dagger.hilt.android.plugin")
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
-    namespace = "com.example.weighttracker"
-    compileSdk = 34
+    namespace 'com.example.weighttracker'
+    compileSdk 34
 
     defaultConfig {
-        applicationId = "com.example.weighttracker"
-        minSdk = 24
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+        applicationId 'com.example.weighttracker'
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
     }
 
     buildFeatures {
-        compose = true
+        compose true
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.4"
+        kotlinCompilerExtensionVersion '1.5.4'
     }
 
     kotlinOptions {
-        jvmTarget = "17"
+        jvmTarget '17'
     }
 }
 
 dependencies {
-    implementation("androidx.core:core-ktx:1.12.0")
+    implementation 'androidx.core:core-ktx:1.12.0'
 
     // Jetpack Compose
-    implementation(platform("androidx.compose:compose-bom:2024.02.02"))
-    implementation("androidx.compose.ui:ui")
-    implementation("androidx.compose.material3:material3")
-    implementation("androidx.compose.ui:ui-tooling-preview")
-    debugImplementation("androidx.compose.ui:ui-tooling")
-    implementation("androidx.navigation:navigation-compose:2.7.7")
+    implementation platform('androidx.compose:compose-bom:2024.02.02')
+    implementation 'androidx.compose.ui:ui'
+    implementation 'androidx.compose.material3:material3'
+    implementation 'androidx.compose.ui:ui-tooling-preview'
+    debugImplementation 'androidx.compose.ui:ui-tooling'
+    implementation 'androidx.navigation:navigation-compose:2.7.7'
 
     // Room
-    implementation("androidx.room:room-ktx:2.6.1")
-    kapt("androidx.room:room-compiler:2.6.1")
+    implementation 'androidx.room:room-ktx:2.6.1'
+    kapt 'androidx.room:room-compiler:2.6.1'
 
     // DataStore
-    implementation("androidx.datastore:datastore-preferences:1.1.1")
+    implementation 'androidx.datastore:datastore-preferences:1.1.1'
 
     // Hilt + WorkManager
-    implementation("com.google.dagger:hilt-android:2.50")
-    kapt("com.google.dagger:hilt-compiler:2.50")
-    implementation("androidx.hilt:hilt-navigation-compose:1.1.0")
-    implementation("androidx.work:work-runtime-ktx:2.9.0")
-    implementation("androidx.hilt:hilt-work:1.2.0")
+    implementation 'com.google.dagger:hilt-android:2.50'
+    kapt 'com.google.dagger:hilt-compiler:2.50'
+    implementation 'androidx.hilt:hilt-navigation-compose:1.1.0'
+    implementation 'androidx.work:work-runtime-ktx:2.9.0'
+    implementation 'androidx.hilt:hilt-work:1.2.0'
 
     // MPAndroidChart (optional – if you prefer Canvas remove this)
-    implementation("com.github.PhilJay:MPAndroidChart:3.1.0")
+    implementation 'com.github.PhilJay:MPAndroidChart:3.1.0'
 
     // Lottie
-    implementation("com.airbnb.android:lottie-compose:6.4.0")
+    implementation 'com.airbnb.android:lottie-compose:6.4.0'
 }
