@@ -4,7 +4,12 @@ import androidx.room.Database
 import androidx.room.TypeConverters
 import androidx.room.RoomDatabase
 
-@Database(entities = [WeightEntry::class], version = 1)
+@Database(
+    entities = [WeightEntry::class],
+    version = 1,
+    exportSchema = false
+)
+@TypeConverters(Converters::class)
 abstract class AppDatabase : RoomDatabase() {
-    abstract fun weightEntryDao(): WeightEntryDao
+    abstract fun weightDao(): WeightDao
 }
