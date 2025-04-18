@@ -6,6 +6,7 @@ plugins {
 }
 
 android {
+    namespace "com.example.weighttracker"
     defaultConfig {
         applicationId "com.example.weighttracker"
         minSdk 24
