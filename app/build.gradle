@@ -1,45 +1,42 @@
 plugins {
-    id("com.android.application")
-    kotlin("android")
-    id("org.jetbrains.kotlin.kapt")
-    id("com.google.dagger.hilt.android")
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'org.jetbrains.kotlin.kapt'
+    id "com.google.dagger.hilt.android"
 }
 
 android {
     namespace "com.example.weighttracker"
-    compileSdk = 34
-        minSdk 24
+    compileSdk 34            // (or whatever you use)
+
+    defaultConfig {
+        applicationId "com.example.weighttracker"
         minSdk 24
         targetSdk 34
         versionCode 1
         versionName "1.0"
     }
-    compileSdk 34
+
+    /* ---------- Java version that Javac and D8 see ---------- */
     compileOptions {
-    buildFeatures {
-        compose true
-    }
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion "1.5.4"
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
 
-
+    /* ---------- Kotlin compiler flags (Groovy syntax) ------- */
     kotlinOptions {
-        jvmTarget = "17"
+        jvmTarget = '17'
     }
+    buildFeatures { compose true }
+    composeOptions {
+        kotlinCompilerExtensionVersion "1.5.9"   // or newer
+    }
+
 }
 
+/* --------- Kotlin Toolchain (works in Groovy too) ---------- */
 kotlin {
-    jvmToolchain(17)         // Gradle ≥ 8 syntax
-}
-
-tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
-    compilerOptions {
-        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17)
-    }
+    jvmToolchain(17)
 }
 
 kapt {
@@ -68,7 +65,7 @@ dependencies {
     // Material 3
     implementation("com.google.android.material:material:1.12.0-alpha03")
 
-    // Hilt + WorkManager
+   // Hilt + WorkManager
     implementation("com.google.dagger:hilt-android:2.50")
     kapt("com.google.dagger:hilt-compiler:2.50")
 
@@ -83,4 +80,5 @@ dependencies {
     // Lottie
     implementation("com.airbnb.android:lottie-compose:6.4.0")
 }
+
 
