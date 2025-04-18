@@ -1,14 +1,14 @@
 plugins {
-    id "com.android.application"
-    id "org.jetbrains.kotlin.android"
-    id "org.jetbrains.kotlin.kapt"
-    id "com.google.dagger.hilt.android"
+    id("com.android.application")
+    kotlin("android")
+    id("org.jetbrains.kotlin.kapt")
+    id("com.google.dagger.hilt.android")
 }
 
 android {
     namespace "com.example.weighttracker"
-    defaultConfig {
-        applicationId "com.example.weighttracker"
+    compileSdk = 34
+        minSdk 24
         minSdk 24
         targetSdk 34
         versionCode 1
@@ -16,14 +16,11 @@ android {
     }
     compileSdk 34
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_17
-        targetCompatibility JavaVersion.VERSION_17
-    }
-    kotlin {
-        jvmToolchain(17)
-    }
     buildFeatures {
         compose true
+    }
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     composeOptions {
         kotlinCompilerExtensionVersion "1.5.4"
@@ -33,6 +30,20 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
+}
+
+kotlin {
+    jvmToolchain(17)         // Gradle ≥ 8 syntax
+}
+
+tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
+    compilerOptions {
+        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17)
+    }
+}
+
+kapt {
+    correctErrorTypes = true // optional but recommended for Hilt
 }
 
 
@@ -72,3 +83,4 @@ dependencies {
     // Lottie
     implementation("com.airbnb.android:lottie-compose:6.4.0")
 }
+
