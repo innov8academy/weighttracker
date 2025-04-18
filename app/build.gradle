@@ -49,6 +49,9 @@ dependencies {
     // DataStore
     implementation("androidx.datastore:datastore-preferences:1.1.1")
 
+    // Material 3
+    implementation("com.google.android.material:material:1.12.0-alpha03")
+
     // Hilt + WorkManager
     implementation("com.google.dagger:hilt-android:2.50")
     kapt("com.google.dagger:hilt-compiler:2.50")
