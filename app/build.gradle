@@ -22,6 +22,7 @@ android {
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
+        coreLibraryDesugaringEnabled true
     }
     buildFeatures { compose true }
     composeOptions {
@@ -81,6 +82,8 @@ dependencies {
 
     // Lottie
     implementation("com.airbnb.android:lottie-compose:6.4.0")
+    implementation "com.android.tools:desugar_jdk_libs:2.0.4"
+
 }
 
 
