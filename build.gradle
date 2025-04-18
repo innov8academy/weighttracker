@@ -3,7 +3,9 @@
 
 plugins {
     id 'org.jetbrains.kotlin.android' version '1.9.22' apply false    
+
 }
+
 dependencies {
     classpath "com.google.gms:google-services:4.4.1"
 }
