@@ -23,6 +23,10 @@ android {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
     }
+    room {
+        // Creates app/schemas/… during every compile
+        schemaDirectory.set(file("$projectDir/schemas"))
+    }
 
     buildFeatures { compose true }
     composeOptions {
