@@ -1,13 +1,15 @@
 --- a/app/src/main/res/values/themes.xml
 +++ b/app/src/main/res/values/themes.xml
 
+<?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- Name it however you like -->
+    <!-- Base application theme. -->
     <style name="Theme.WeightTracker"
            parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- optional overrides -->
+        <!-- Customize your theme here -->
         <item name="colorPrimary">@color/md_theme_light_primary</item>
+        <item name="colorSecondary">@color/md_theme_light_secondary</item>
     </style>
 
 </resources>
