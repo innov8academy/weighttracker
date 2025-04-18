@@ -2,6 +2,7 @@ package com.example.weighttracker.data.repository
 
 import android.content.Context
 import androidx.datastore.preferences.core.edit
+import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import com.example.weighttracker.data.local.WeightEntry
 import com.example.weighttracker.data.local.WeightEntryDao
@@ -16,7 +17,7 @@ import javax.inject.Singleton
 @Singleton
 class WeightRepository(
     private val dao: WeightEntryDao,
-    private val dataStore: androidx.datastore.core.DataStore<Preferences>
+    private val dataStore: DataStore<Preferences>
 ) {
     fun getEntries(): Flow<List<WeightEntry>> = dao.getAll()
     fun getLatest(): Flow<WeightEntry?> = dao.latest()

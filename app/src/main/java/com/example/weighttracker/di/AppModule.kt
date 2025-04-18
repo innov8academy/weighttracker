@@ -1,6 +1,7 @@
 package com.example.weighttracker.di
 
 import android.content.Context
+import androidx.datastore.core.DataStore
 import androidx.datastore.preferences.core.Preferences
 import androidx.datastore.preferences.preferencesDataStore
 import androidx.room.Room
@@ -29,6 +30,6 @@ object AppModule {
 
     @Provides
     @Singleton
-    fun provideWeightRepository(db: AppDatabase, @ApplicationContext context: Context): WeightRepository =
-        WeightRepository(db.weightEntryDao(), context.dataStore)
+    fun provideWeightRepository(db: AppDatabase, dataStore: DataStore<Preferences>): WeightRepository =
+        WeightRepository(db.weightEntryDao(), dataStore)
 }
