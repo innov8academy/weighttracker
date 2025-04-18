@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:tools="http://schemas.android.com/tools">
-
     <!-- Base application theme -->
     <style name="Theme.WeightTracker"
            parent="Theme.Material3.DayNight.NoActionBar">
@@ -8,5 +7,4 @@
         <item name="colorPrimary">@color/md_theme_light_primary</item>
         <item name="colorSecondary">@color/md_theme_light_secondary</item>
     </style>
-
 </resources>

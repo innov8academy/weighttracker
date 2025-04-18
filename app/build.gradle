@@ -3,7 +3,7 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'org.jetbrains.kotlin.kapt'
     id "com.google.dagger.hilt.android"
-    id 'androidx.room'
+    id 'androidx.room' version '2.6.1'
 }
 
 android {
@@ -24,18 +24,17 @@ android {
         targetCompatibility JavaVersion.VERSION_17
     }
 
-    /* ---------- Kotlin compiler flags (Groovy syntax) ------- */
-    kotlinOptions {
-        jvmTarget = '17'
-    }
     buildFeatures { compose true }
     composeOptions {
         kotlinCompilerExtensionVersion "1.5.9"   // or newer
     }
+        kotlinOptions {
+        jvmTarget = '17'
+    }
 
-}
+} 
 
-/* --------- Kotlin Toolchain (works in Groovy too) ---------- */
+
 kotlin {
     jvmToolchain(17)
 }
