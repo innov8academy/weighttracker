@@ -23,11 +23,6 @@ android {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
     }
-    room {
-        // Creates app/schemas/… during every compile
-        schemaDirectory.set(file("$projectDir/schemas"))
-    }
-
     buildFeatures { compose true }
     composeOptions {
         kotlinCompilerExtensionVersion "1.5.9"   // or newer
@@ -38,7 +33,10 @@ android {
 
 } 
 
-
+room {
+    // Creates app/schemas/… during every compile
+    schemaDirectory("$projectDir/schemas")
+}
 kotlin {
     jvmToolchain(17)
 }
