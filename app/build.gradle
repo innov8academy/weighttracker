@@ -32,14 +32,15 @@ android {
         jvmTarget = '17'
     }
 
-} 
-
-room {
-    // Creates app/schemas/… during every compile
-    schemaDirectory("$projectDir/schemas")
 }
 kotlin {
     jvmToolchain(17)
+}
+
+kapt {
+    arguments {
+        arg("room.schemaLocation", "$projectDir/schemas")
+    }
 }
 
 kapt {
