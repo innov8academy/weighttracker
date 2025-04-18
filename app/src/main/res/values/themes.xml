@@ -1,0 +1,5 @@
+<resources>
+    <style name="Theme.WeightTracker" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- primary colors etc. -->
+    </style>
+</resources>
