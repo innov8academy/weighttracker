@@ -1,5 +1,13 @@
-<resources>
-    <style name="Theme.WeightTracker" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- primary colors etc. -->
+--- a/app/src/main/res/values/themes.xml
++++ b/app/src/main/res/values/themes.xml
+
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Name it however you like -->
+    <style name="Theme.WeightTracker"
+           parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- optional overrides -->
+        <item name="colorPrimary">@color/md_theme_light_primary</item>
     </style>
+
 </resources>
